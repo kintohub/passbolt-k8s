@@ -1,0 +1,34 @@
+secret:
+  passboltGPG: gpg-passbolt
+  passboltSSL: ssl-passbolt
+  mysqlSSL: mysql-passbolt-ssl
+
+deployment:
+  env:
+    APP_FULL_BASE_URL: www.passbolt.local
+    DATASOURCES_DEFAULT_HOST: mysql-passbolt
+    DATASOURCES_DEFAULT_PORT: '3306'
+    DATASOURCES_DEFAULT_USERNAME: passbolt
+    DATASOURCES_DEFAULT_PASSWORD: passbolt123
+    DATASOURCES_DEFAULT_DATABASE: passbolt
+    DATASOURCES_SSL_KEY: /etc/ssl/certs/mysql-key.pem
+    DATASOURCES_SSL_CERT: /etc/ssl/certs/mysql-cert.pem
+    DATASOURCES_SSL_CA: /etc/ssl/certs/mysql-ca.pem
+    EMAIL_DEFAULT_FROM: passbolt@kintohub.com
+    EMAIL_TRANSPORT_DEFAULT_HOST: smtp.sendgrid.net
+    EMAIL_TRANSPORT_DEFAULT_PORT: '587'
+    EMAIL_TRANSPORT_DEFAULT_USERNAME: test@sendgrid.com
+    EMAIL_TRANSPORT_DEFAULT_PASSWORD: 2dshjas8338
+    EMAIL_TRANSPORT_DEFAULT_TLS: true
+    PASSBOLT_GPG_SERVER_KEY_FINGERPRINT: 5FCE50A58C033ACDBA9FF7A417AB09043DF9542E
+    PASSBOLT_REGISTRATION_PUBLIC: false
+    PASSBOLT_SSL_FORCE: true
+
+configMYSQL:
+  mysql_custom.cnf: |-
+    [client]
+    ssl-ca = /etc/ssl/certs/mysql-ca.pem
+    ssl-cert = /etc/ssl/certs/mysql-cert.pem
+    ssl-key = /etc/ssl/certs/mysql-key.pem
+
+mysqlSSL: true

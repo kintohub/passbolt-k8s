@@ -1,0 +1,20 @@
+existingSecret: mysql-passbolt-creds
+mysqlUser: passbolt
+mysqlDatabase: passbolt
+
+ssl:
+  enabled: true
+  secret: mysql-passbolt-ssl
+
+configurationFiles:
+  mysql_custom.cnf: |-
+    [client]
+    ssl-ca = /ssl/ca.pem
+    ssl-cert = /ssl/server-cert.pem
+    ssl-key = /ssl/server-key.pem
+
+    [mysqld]
+    require_secure_transport = ON
+    ssl-ca = /ssl/ca.pem
+    ssl-cert = /ssl/server-cert.pem
+    ssl-key = /ssl/server-key.pem

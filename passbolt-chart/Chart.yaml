@@ -1,0 +1,13 @@
+name: passbolt
+version: 0.1.0
+apiVersion: v1
+appVersion: "1.0"
+home: https://www.passbolt.com/
+description: A Passbolt Chart for Kubernetes
+keywords:
+- passbolt
+- password_manager
+sources:
+- https://github.com/passbolt/passbolt_docker
+- https://github.com/passbolt/passbolt_api/
+- https://hub.docker.com/r/passbolt/passbolt/
