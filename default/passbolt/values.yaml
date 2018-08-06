@@ -32,3 +32,12 @@ configMYSQL:
     ssl-key = /etc/ssl/certs/mysql-key.pem
 
 mysqlSSL: true
+
+ingress:
+  enabled: true
+  type: nginx
+  host: passbolt.com
+  namespace: passbolt
+  sslSecret: ssl-passbolt-com
+  annotations:
+    - 'nginx.org/ssl-services: "true"'
